@@ -24,7 +24,8 @@ namespace BXMT
 
             var file = await OpenFile(pickOptions);
 
-            if (file != null) {
+            if (file != null)
+            {
                 FilepathLabel.Text = file.FullPath;
                 List<System.Xml.XmlElement>? items = BXMT.Parser.GetItemsFromXML(file.FullPath);
                 ItemStack.Children.Clear();
