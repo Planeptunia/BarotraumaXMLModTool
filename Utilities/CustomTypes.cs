@@ -63,6 +63,7 @@ namespace BXMT.Utilities
             public string packageVersion;
             public XmlElement xmlContent;
 
+            // List containing all of the included files nodes
             public List<ContentFile> includedFiles;
 
             /// <summary>

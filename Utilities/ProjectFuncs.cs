@@ -19,12 +19,15 @@ namespace BXMT.Utilities
 
             if (result != null)
             {
+                // Check if target folder is not empty and if not return null
                 string[] filesInTarget = Directory.GetFiles($"{result.Folder.Path}");
                 if (filesInTarget.Length > 0 || filesInTarget != null)
                 {
+                    // TODO: Show error message when target folder is not empty
                     Debug.WriteLine("Target Folder is not empty, abort");
                     return null;
                 }
+
                 FileStream filelistStream = File.Open($"{result.Folder.Path}\\filelist.xml", FileMode.Create);
 
                 XmlDocument filelistXml = new();
@@ -34,6 +37,8 @@ namespace BXMT.Utilities
                 filelistXml.AppendChild(newPackage.xmlContent);
 
                 filelistXml.Save(filelistStream);
+
+                filelistStream.Flush();
 
                 filelistStream.Close();
 
@@ -53,6 +58,7 @@ namespace BXMT.Utilities
 
             if (result != null)
             {
+                // Check if target folder is not empty and if not check if it has filelist.xml in it
                 string[] filesInTarget = Directory.GetFiles($"{result.Folder.Path}");
                 if (filesInTarget.Length > 0 || filesInTarget != null)
                 {
@@ -67,6 +73,7 @@ namespace BXMT.Utilities
                 }
                 else 
                 {
+                    // TODO: Show error message when target folder is empty or doesn't have filelist.xml
                     return null;
                 }
 
