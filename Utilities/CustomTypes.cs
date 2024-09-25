@@ -20,6 +20,9 @@ namespace BXMT.Utilities
         /// </summary>
         public class OptionalTypeAttributes
         {
+            /// <summary>
+            /// Helper class containing all optional attributes for Item
+            /// </summary>
             public class ItemAttributes
             {
                 public string? NameIdentifier { get; set; } = null;
