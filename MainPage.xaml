@@ -4,34 +4,31 @@
              x:Class="BXMT.MainPage"
              Shell.NavBarIsVisible="False">
 
-    <VerticalStackLayout Spacing="25">
-        <Grid VerticalOptions="FillAndExpand">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Label Grid.ColumnSpan="2" Grid.Row="1" 
-                Text="Title Label" HorizontalTextAlignment="Center"
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.ColumnSpan="2" Grid.Row="0" 
+                Text="Welcome to BXMT" HorizontalTextAlignment="Center"
                 VerticalTextAlignment="Center" Padding="0,20,0,20"
                 HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
-            <Frame Grid.Row="2" Grid.RowSpan="2"
+        <Frame Grid.Row="1"
                 BorderColor="LightGray" BackgroundColor="Transparent"
-                VerticalOptions="FillAndExpand" Margin="20">
-                
-            </Frame>
-            <StackLayout Grid.Row="2" Grid.Column="2" Grid.RowSpan="2" 
-                Padding="30" Spacing="20"
-                Margin="40" VerticalOptions="FillAndExpand">
-                <Button Text="Button 1" />
-                <Button Text="Button 2" />
-            </StackLayout>
-        </Grid>
-
-    </VerticalStackLayout>
+                VerticalOptions="FillAndExpand" Margin="40">
+            <Label Text="Nothing is here." HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center" TextColor="Gray"/>
+        </Frame>
+        <StackLayout Grid.Row="1" Grid.Column="2" 
+                Padding="20,0,20,0" Spacing="20"
+                Margin="40" VerticalOptions="CenterAndExpand">
+            <Button Text="Open existing project..."/>
+            <Button Text="Create new project..."/>
+        </StackLayout>
+    </Grid>
 
 </ContentPage>
